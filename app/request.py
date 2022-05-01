@@ -22,6 +22,21 @@ def get_article_top_headlines(category):
 
       return articles_results
 
+def get_article_everything(query):
+  get_articles_url = 'https://newsapi.org/v2/everything?q={}&from=2022-04-30&language=en&sortBy=publishedAt&apiKey={}'.format(query,api_key)
+  with urllib.request.urlopen(get_articles_url) as url:
+    get_articles_data = url.read()
+    get_articles_response = json.loads(get_articles_data)
+
+    articles_results = None
+
+    if get_articles_response['articles']:
+     articles_results_list = get_articles_response['articles']
+     articles_results = process_results(articles_results_list)
+
+  return articles_results
+
+
 def process_results(articles_list):
   '''
   Function that processes articles results and transforms it to a list of objects
@@ -41,4 +56,3 @@ def process_results(articles_list):
             articles_results.append(article_object)
 
   return articles_results
-  
