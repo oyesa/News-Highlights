@@ -1,6 +1,6 @@
 from app import app
 import urllib.request,json
-from .models import *
+from .models import Article, Source
 
 
 
@@ -21,3 +21,24 @@ def get_article_top_headlines(category):
       articles_results = process_results(articles_results_list)
 
       return articles_results
+
+def process_results(articles_list):
+  '''
+  Function that processes articles results and transforms it to a list of objects
+  '''
+  articles_results = []
+  for article in articles_list:
+        author = article.get('author')
+        title = article.get('title')
+        description = article.get('description')
+        url = article.get('url')
+        urlToImage = article.get('urlToImage')
+        publishedAt = article.get('publisheAt')
+        content = article.get('content')
+        
+        if urlToImage:
+            article_object = Article(author,title,description,url,urlToImage,publishedAt,content)
+            articles_results.append(article_object)
+
+  return articles_results
+  
