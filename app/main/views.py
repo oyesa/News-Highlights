@@ -1,7 +1,6 @@
-from email import message
-from turtle import title
 from flask import render_template, request, redirect, url_for
 from app import app
+from ..models import *
 from ..request import get_article_top_headlines, get_article_everything
 
 #views
