@@ -5,8 +5,17 @@ from .models import Article, Source
 
 
 # Getting news api key
-api_key = app.config['NEWS_API_KEY']
-base_url = app.config['NEWS_API_BASE_URL']
+api_key = None
+# Getting news base url
+base_url = None
+
+
+def configure_request(app):
+  
+    global api_key,base_url
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config['NEWS_API_BASE_URL']
+    pass
 
 def get_article_top_headlines(category):
   get_articles_url = base_url.format(category, api_key)
