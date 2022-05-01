@@ -1,24 +1,30 @@
 from email import message
 from turtle import title
-from flask import render_template
+from flask import render_template, request, redirect, url_for
 from app import app
 from .request import get_article_top_headlines
 
+#views
 @app.route('/')
 def index():
   """
   view root page function
   """
   business_articles = get_article_top_headlines('business')
-  print(business_articles)
-  title = 'Home - The  best parting shot news website'
-  return render_template('index.html', title = title, business_articles = business_articles)
+  all_articles = get_article_everything('all')
+  return render_template('index.html', all_articles = all_articles, business_articles = business_articles)
 
-@app.route('/science/<int:science_id>')
-def science(science_id):
+@app.route('/localnews')
+def localnews():
+  localnews_articles = get_article_everything('localnews')
+  return render_template('localnews.html', localnews = localnews)
 
-    '''
-    View science news page function that returns the science news page and its data
-    '''
-    title = 'Science news from around the world'
-    return render_template('science.html', title = title)
+@app.route('/technology')
+def technology():
+  technology_articles = get_article_top_headlines('technology')
+  return render_template('tech.html', technology = technology)
+
+@app.route('/worldnews')
+def worldnews():
+  worldnews_articles = get_article_everything('world')
+  return render_template('worldnews.html', worldnews = worldnews)
