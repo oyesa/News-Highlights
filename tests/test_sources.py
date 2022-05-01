@@ -1,5 +1,5 @@
 import unittest
-from .models import Source
+from ..app.models import Source
 
 
 class SourceTest(unittest.TestCase):
