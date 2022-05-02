@@ -1,5 +1,4 @@
 from flask import Blueprint
 main = Blueprint('main',__name__)
+from . import views,error
 
-#Import views and error files 
-from app.main import views,error
