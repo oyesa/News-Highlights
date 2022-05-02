@@ -16,7 +16,7 @@ def index():
     bbc_news_home = get_articles_from_source_selected('bbc-news', '2')
     cbc_news = get_articles_from_source_selected('cbc-news', '2')
     title = 'Home - Welcome to Parting Shot News'
-    return render_template('index.html',title=title, bcc=bbc_news_home,bbc_news=bbc_news, cnn_home=cnn_home, sources=sources, cbc_news=cbc_news,aljazeera=aljazeera)
+    return render_template('index.html',title=title, bcc=bbc_news_home, bbc_news=bbc_news, cnn_home=cnn_home, sources=sources, cbc_news=cbc_news, aljazeera=aljazeera)
 
 
 @main.route('/news-source/articles/<source_id>')
