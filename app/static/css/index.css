@@ -4,4 +4,9 @@ font-family: 'Satisfy', cursive; */
 
 body{
   font-family: 'Satisfy', cursive;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
 }
+

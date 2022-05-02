@@ -1,6 +1,6 @@
 class Article:
   '''
-  article class to define Article objects
+  article and source class to define article and source objects
   '''
 
   def __init__(self, author,title, description, url, urlToImage, publishedAt, content):
@@ -12,11 +12,9 @@ class Article:
      self.publishedAt = publishedAt
      self.content = content
 
-  pass
-
 
 class Source:
-  def __init__(self, id, name):
+  def __init__(self, id, name, url):
     self.id = id
     self.name = name
-  pass
+    self.url = url
