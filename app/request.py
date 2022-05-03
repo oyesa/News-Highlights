@@ -47,9 +47,6 @@ def get_article_everything(query):
 
 
 def process_results(articles_list):
-  '''
-  Function that processes articles results and transforms it to a list of objects
-  '''
   articles_results = []
   for article in articles_list:
         author = article.get('author')

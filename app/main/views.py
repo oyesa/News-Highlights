@@ -31,14 +31,14 @@ def articles(source_id):
 @main.route('/localnews')
 def localnews():
     localnews = get_articles_depending_on_category_of_the_source('localnews')
-    title = 'Local News - News from Kenya to the world'
+    title = 'News from Kenya to the world'
     return render_template('localnews.html',title=title,localnews=localnews)
 
 
 @main.route('/business')
 def business():
     business = get_articles_depending_on_category_of_the_source('business')
-    title = 'Business - Business news from around the world'
+    title = 'Business news from around the world'
     return render_template('business.html',title=title,business=business)
 
 
@@ -46,19 +46,19 @@ def business():
 def worldnews():
     worldnews = get_articles_depending_on_category_of_the_source(
         'worldnews')
-    title = 'World News - News from around the world'
+    title = 'News from around the world'
     return render_template('worldnews.html', title=title, worldnews=worldnews)
 
 
 @main.route('/health')
 def health():
     health = get_articles_depending_on_category_of_the_source('health')
-    title = 'Health - News on health from all over world'
+    title = 'News on health from all over world'
     return render_template('health.html', title=title, health=health)
 
 
 @main.route('/technology')
 def technology():
     technology = get_articles_depending_on_category_of_the_source('technology')
-    title = 'Technology - News on technology from around the world'
+    title = 'News on technology from around the world'
     return render_template('tech.html',title=title, technology=technology)
