@@ -14,7 +14,11 @@ class Article:
 
 
 class Source:
-  def __init__(self, id, name, url):
-    self.id = id
-    self.name = name
-    self.url = url
+
+ def __init__(self, id, name, description, url, category, country):
+        self.id = id
+        self.name = name
+        self.description = description
+        self.url = url
+        self.category = category
+        self.country = country

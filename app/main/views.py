@@ -1,15 +1,12 @@
 from flask import render_template
-from ..request import get_source, get_articles, get_articles_from_source_selected, get_articles_depending_on_category_of_the_source
+from ..request import get_articles, get_source, get_articles_from_source_selected, get_articles_depending_on_category_of_the_source
 from . import main
 
 #views
 @main.route('/')
 def index():
-    '''
-    Function that returns the index page 
-    '''
+    
     sources = get_source()
-    #get articles from bbc-news
     bbc_news = get_articles_from_source_selected('bbc-news', '8')
     aljazeera = get_articles_from_source_selected('al-jazeera-english', '8')
     cnn_home = get_articles_from_source_selected('cnn', '1')
@@ -21,7 +18,6 @@ def index():
 
 @main.route('/news-source/articles/<source_id>')
 def articles(source_id):
-  #Getting articles based on the source id
     articles = get_articles(source_id)
     title = f'{source_id}'
 

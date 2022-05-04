@@ -1,10 +1,11 @@
 import os
-from distutils.debug import DEBUG
 
 class Config:
-    NEWS_API_BASE_URL = 'https://newsapi.org/v2/top-headlines?category={}&language=en&from=2022-04-16&apiKey={}'
-    NEWS_API_KEY = os.environ.get('29945f73d25b4649bcfe22e5fb379861')
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    NEWS_API_SOURCE_URL='https://newsapi.org/v2/sources?apiKey={}'
+    NEWS_API_BASE_URL ='https://newsapi.org/v2/top-headlines?country=us&category={}&apiKey={}'
+    NEWS_API_KEY=os.environ.get('NEWS_API_KEY')
+    SECRET_KEY=os.environ.get('SECRET_KEY') or 'hard to guess string here it is'
+
 
 class ProdConfig(Config):
     pass
