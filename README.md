@@ -11,31 +11,31 @@ Parting-Short is a news application built on flask python that displays various 
 
 ### Setup/Installation Requirements
 The application requires the following installations to operate:
-  -Python3.8
-  -Pip
-  -Flask()
-  -News ApiKey(https://newsapi.org/)
+*Python3.8
+*Pip
+*Flask()
+*News ApiKey(https://newsapi.org/)
 
 With the above installations proceed to:
- -git clone https://github.com/oyesa/News-Highlights.git
- -cd news-highlights
- -code . (if using Visual Studio Code) 
+*git clone https://github.com/oyesa/News-Highlights.git
+*cd news-highlights
+*code . (if using Visual Studio Code) 
 
  ### Running Application
  To run the application, open the cloned files in your terminal and run the following commands:
-  $ python3.8 -m venv --without-pip virtual
-  $ source virtual/bin/activate
-  $ curl https://bootstrap.pypa.io/get-pip.py | python
-  $ chmod a+x start.sh
-  $ ./start.sh
+*$ python3.8 -m venv --without-pip virtual
+*$ source virtual/bin/activate
+*$ curl https://bootstrap.pypa.io/get-pip.py | python
+*$ chmod a+x start.sh
+*$ ./start.sh
 
  ### Technologies Used
--Python3.8
--Flask
--News Api
--HTML
--CSS
--Bootstrap
+*Python3.8
+*Flask
+*News Api
+*HTML
+*CSS
+*Bootstrap
 
 ### Bugs
 No known bugs
