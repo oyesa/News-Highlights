@@ -3,7 +3,7 @@ font-family: 'Oleo Script', cursive;
 font-family: 'Satisfy', cursive; */
 
 body{
-  font-family: 'Satisfy', cursive;
+  font-family: 'Satisfy', sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -42,8 +42,12 @@ btn-info {
 .nav-right {
   margin-right: 50px;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  list-style: none;
+  display: inline-block;
+  font-size: 16px;
   font-weight: 400;
+  padding: 8px 12px;
+  position: relative;
 }
 
 .navbar-brand {
@@ -54,7 +58,7 @@ btn-info {
 }
 
 .navbar-expand-lg {
-  background: linear-gradient(to right, purple, red, yellow);
+  background-color: purple;
 }
 
 .navbar-brand:hover {
@@ -112,15 +116,9 @@ a {
   background: white none repeat scroll 0 0;
   border: 2px solid white;
   border-radius: 5px;
-  box-shadow: 0 0 11px 5px rgba(137, 110, 184, 0.912);
+  box-shadow: 0 0 11px 5px rgba(148, 177, 241, 0.912);
   margin-bottom: 1px;
   padding: 1px 1px;
-  transition: all 300ms ease-in-out;
-  -webkit-transition: all 300ms ease-in-out;
-}
-.card:hover {
-  box-shadow: 0 0 11px 5px rgba(137, 110, 184, 0.912);
-  background: linear-gradient(-19deg, rgba(135, 91, 91, 0.95) 0px);
 }
 
 .card-img-top {

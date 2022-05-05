@@ -25,11 +25,11 @@
             <p class="card-text"><small>{{ article.description[:110] }}...</small></p>
             <div class="d-flex justify-content-around">
                 <div>
-                    <p><strong><span class="badge rounded-pill bg-warning text-dark"><small>Author: {{ article.author }}</small></span></strong></p>
-                    <p><strong><span class="badge rounded-pill bg-warning text-dark"><small>Published On: {{ article.publishedAt }}</small></span></strong></p>
+                    <p><strong><span class="badge bg-primary text-light"><small>Author: {{ article.author }}</small></span></strong></p>
+                    <p><strong><span class="badge bg-primary text-light"><small>Published On: {{ article.publishedAt }}</small></span></strong></p>
                 </div>
-                <div class="text-center">
-                    <a href="{{ article.url }}" target="_blank" class="color-main"><small>Read More <i class="fa fa-arrow-right"></i></small> </a>
+                <div class="">
+                    <a href="{{ article.url }}" target="_blank" class="color-main"><small>Go to article</small> </a>
                 </div>
             </div>
         </div>

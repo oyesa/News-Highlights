@@ -5,7 +5,6 @@ from . import main
 #views
 @main.route('/')
 def index():
-    
     sources = get_source()
     bbc_news = get_articles_from_source_selected('bbc-news', '8')
     aljazeera = get_articles_from_source_selected('al-jazeera-english', '8')

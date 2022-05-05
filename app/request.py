@@ -1,5 +1,6 @@
-import urllib.request, json
-from .models import *
+import urllib.request
+import json
+from .models import Article, Source
 
 
 
@@ -18,7 +19,7 @@ def configure_request(app):
     pass
 
 def get_articles(source_id):
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(source_id, api_key)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey=44524a2a935b40d0ba2fef55f93001b5'.format(source_id)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -32,7 +33,7 @@ def get_articles(source_id):
 
 
 def get_articles_from_source_selected(source, pageLimitSize):
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}&pageSize={}'.format(source,api_key, pageLimitSize)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey=44524a2a935b40d0ba2fef55f93001b5&pageSize={}'.format(source, pageLimitSize)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -46,7 +47,7 @@ def get_articles_from_source_selected(source, pageLimitSize):
 
 
 def get_articles_depending_on_category_of_the_source(category):
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?category={}&apiKey={}'.format(category, api_key)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?category={}&apiKey=44524a2a935b40d0ba2fef55f93001b5'.format(category)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -59,7 +60,7 @@ def get_articles_depending_on_category_of_the_source(category):
     return articles_results
 
 def get_source(): 
-    get_source_url = 'https://newsapi.org/v2/sources?apiKey={}'.format(api_key)
+    get_source_url = 'https://newsapi.org/v2/sources?apiKey=44524a2a935b40d0ba2fef55f93001b5'.format()
     print(get_source_url)
     with urllib.request.urlopen(get_source_url) as url:
         get_source_data = url.read()
@@ -82,7 +83,7 @@ def process_results(articles_list):
         description = article.get('description')
         url = article.get('url')
         urlToImage = article.get('urlToImage')
-        publishedAt = article.get('publisheAt')
+        publishedAt = article.get('publishedAt')
         content = article.get('content')
         
         if urlToImage:
